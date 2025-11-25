@@ -95,53 +95,53 @@ function ProjectCard({ project }: any) {
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -5, scale: 1.03 }}
-      className="flex-shrink-0 w-1/3 group relative rounded-2xl overflow-hidden border border-transparent bg-gradient-to-r from-yellow-200/40 via-yellow-300/30 to-purple-600/40 backdrop-blur-sm py-12 px-6 text-yellow-200 transition-all duration-300 hover:shadow-lg"
-      style={{ scrollSnapAlign: "start" }}
-    >
-      <div className="bg-white/10 dark:bg-black/30 backdrop-blur-lg rounded-2xl overflow-hidden">
-        <div className="relative w-full h-48 overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-        <div className="p-5">
-          <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
-          <p className="text-sm text-gray-300 mb-4">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-3">
-            {project.tags.map((tag: string) => (
-              <span key={tag} className="px-3 py-1 bg-white/10 text-gray-200 text-xs rounded-full font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex items-center gap-3 flex-wrap">
-            {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-purple-300 hover:text-yellow-300 transition-all">
-                View Live <ExternalLink size={16} />
-              </a>
-            )}
-            {project.pdf && (
-              <a href={project.pdf} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-blue-300 hover:text-yellow-300 transition-all">
-                <FileText size={16} /> Report
-              </a>
-            )}
-            {project.github && (
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-all">
-                <Github size={16} /> Code
-              </a>
-            )}
-          </div>
-        </div>
+  ref={ref}
+  initial={{ opacity: 0, y: 30 }}
+  animate={inView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+  whileHover={{ y: -5, scale: 1.03 }}
+  className="flex-shrink-0 w-full sm:w-80 md:w-1/3 group relative rounded-2xl overflow-hidden border border-transparent bg-gradient-to-r from-yellow-200/40 via-yellow-300/30 to-purple-600/40 backdrop-blur-sm py-12 px-6 text-yellow-200 transition-all duration-300 hover:shadow-lg"
+  style={{ scrollSnapAlign: "start" }}
+>
+  <div className="bg-white/10 dark:bg-black/30 backdrop-blur-lg rounded-2xl overflow-hidden">
+    <div className="relative w-full h-48 overflow-hidden">
+      <Image
+        src={project.image}
+        alt={project.title}
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+    <div className="p-5">
+      <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
+      <p className="text-sm text-gray-300 mb-4">{project.description}</p>
+      <div className="flex flex-wrap gap-2 mb-3">
+        {project.tags.map((tag: string) => (
+          <span key={tag} className="px-3 py-1 bg-white/10 text-gray-200 text-xs rounded-full font-medium">
+            {tag}
+          </span>
+        ))}
       </div>
-    </motion.div>
+      <div className="flex items-center gap-3 flex-wrap">
+        {project.link && (
+          <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-purple-300 hover:text-yellow-300 transition-all">
+            View Live <ExternalLink size={16} />
+          </a>
+        )}
+        {project.pdf && (
+          <a href={project.pdf} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-blue-300 hover:text-yellow-300 transition-all">
+            <FileText size={16} /> Report
+          </a>
+        )}
+        {project.github && (
+          <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-all">
+            <Github size={16} /> Code
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</motion.div>
   )
 }
 
