@@ -70,6 +70,7 @@ export default function Footer() {
         >
           <p>
             Sophiya Khadka. Made with ❤️ by Sophiya
+            +977 9843970225
           </p>
          
         </motion.div>
